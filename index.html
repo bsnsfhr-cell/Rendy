@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio Rendy</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+font-family:'Poppins',sans-serif;
+background:#07071a;
+color:white;
+overflow-x:hidden;
+}
+
+/* background glow */
+
+.bg-blur{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-1;
+overflow:hidden;
+}
+
+.orb{
+position:absolute;
+border-radius:50%;
+filter:blur(120px);
+opacity:.6;
+animation:floatbg 12s ease-in-out infinite;
+}
+
+.orb1{
+width:500px;
+height:500px;
+background:#7c3aed;
+top:-150px;
+left:-150px;
+}
+
+.orb2{
+width:400px;
+height:400px;
+background:#9333ea;
+bottom:-150px;
+right:-150px;
+animation-delay:4s;
+}
+
+.orb3{
+width:350px;
+height:350px;
+background:#6366f1;
+top:40%;
+left:40%;
+animation-delay:8s;
+}
+
+@keyframes floatbg{
+0%{transform:translateY(0px)}
+50%{transform:translateY(-40px)}
+100%{transform:translateY(0px)}
+}
+
+/* floating */
+
+@keyframes floating{
+0%{transform:translateY(0)}
+50%{transform:translateY(-12px)}
+100%{transform:translateY(0)}
+}
+
+.float{
+animation:floating 4s ease-in-out infinite;
+}
+
+/* card */
+
+.card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+backdrop-filter:blur(20px);
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px rgba(139,92,246,.6);
+}
+
+/* glow */
+
+.glow{
+box-shadow:0 0 25px rgba(139,92,246,.6);
+}
+
+/* scroll animation */
+
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg-blur">
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+</div>
+
+<!-- NAVBAR -->
+
+<header class="fixed w-full backdrop-blur-lg z-50">
+
+<div class="max-w-6xl mx-auto flex justify-between items-center p-5">
+
+<h1 class="text-purple-400 font-bold text-lg">
+Rendy
+</h1>
+
+<nav class="space-x-6 text-sm">
+
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<!-- HERO -->
+
+<section id="home" class="min-h-screen flex items-center">
+
+<div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 px-6">
+
+<div>
+
+<p class="text-purple-300 mb-3">
+Welcome to My Portfolio
+</p>
+
+<h1 class="text-5xl font-bold mb-4">
+
+Rendy <span class="text-purple-400">Web Developer</span>
+
+</h1>
+
+<p class="text-gray-300 mb-4">
+<span id="typing"></span>
+</p>
+
+<div class="flex gap-3 mt-6">
+
+<a href="#portfolio"
+class="bg-purple-600 px-6 py-2 rounded-lg glow">
+See Projects
+</a>
+
+<a href="#contact"
+class="border border-purple-500 px-6 py-2 rounded-lg">
+Contact
+</a>
+
+</div>
+
+</div>
+
+<div class="float">
+
+<img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="py-28">
+
+<div class="max-w-6xl mx-auto px-6">
+
+<h2 class="text-3xl text-center font-bold mb-14">
+About Me
+</h2>
+
+<div class="grid md:grid-cols-2 gap-10 items-center">
+
+<div>
+
+<h3 class="text-2xl font-bold mb-4">
+Hello I'm Rendy
+</h3>
+
+<p class="text-gray-300">
+Saya seorang web developer yang berfokus pada pembuatan website modern,
+responsif, dan user friendly. Saya membangun berbagai jenis website
+seperti landing page, company profile, sistem kasir, dan toko online.
+</p>
+
+</div>
+
+<div class="flex justify-center">
+
+<div class="w-40 h-40 rounded-full bg-gray-700 glow float"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PORTFOLIO -->
+
+<section id="portfolio" class="py-28">
+
+<div class="max-w-6xl mx-auto px-6">
+
+<h2 class="text-3xl font-bold text-center mb-12">
+Portfolio Showcase
+</h2>
+
+<div class="grid md:grid-cols-3 gap-8">
+
+<div class="card p-6 rounded-xl fade">
+
+<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" class="rounded mb-4">
+
+<h3 class="font-bold mb-2">
+Website Kasir POS
+</h3>
+
+<p class="text-sm text-gray-400 mb-4">
+Sistem kasir modern dengan dashboard laporan penjualan.
+</p>
+
+<a href="https://demo.com" target="_blank" class="text-purple-400">
+Live Demo →
+</a>
+
+</div>
+
+<div class="card p-6 rounded-xl fade">
+
+<img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8" class="rounded mb-4">
+
+<h3 class="font-bold mb-2">
+Website Toko Online
+</h3>
+
+<p class="text-sm text-gray-400 mb-4">
+Website katalog produk dengan sistem pemesanan online.
+</p>
+
+<a href="https://demo.com" target="_blank" class="text-purple-400">
+Live Demo →
+</a>
+
+</div>
+
+<div class="card p-6 rounded-xl fade">
+
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" class="rounded mb-4">
+
+<h3 class="font-bold mb-2">
+Company Profile
+</h3>
+
+<p class="text-sm text-gray-400 mb-4">
+Website profil perusahaan dengan desain profesional.
+</p>
+
+<a href="https://demo.com" target="_blank" class="text-purple-400">
+Live Demo →
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- TECH STACK -->
+
+<section class="py-20">
+
+<div class="max-w-5xl mx-auto px-6 text-center">
+
+<h2 class="text-3xl font-bold mb-12">
+Tech Stack
+</h2>
+
+<div class="grid grid-cols-3 md:grid-cols-6 gap-10">
+
+<img class="float" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
+<img class="float" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">
+<img class="float" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
+<img class="float" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg">
+<img class="float" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg">
+<img class="float" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="py-28">
+
+<div class="max-w-4xl mx-auto px-6">
+
+<h2 class="text-3xl text-center font-bold mb-12">
+Contact Me
+</h2>
+
+<form onsubmit="sendWA(event)" class="card p-8 rounded-xl">
+
+<div class="grid md:grid-cols-2 gap-6">
+
+<input id="name" class="p-3 rounded bg-gray-900" placeholder="Name">
+
+<input id="email" class="p-3 rounded bg-gray-900" placeholder="Email">
+
+</div>
+
+<textarea id="message" class="p-3 rounded bg-gray-900 w-full mt-6"
+placeholder="Message"></textarea>
+
+<button class="mt-6 bg-purple-600 px-6 py-3 rounded-lg w-full glow">
+Send Message
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<script>
+
+/* typing */
+
+const text="Membangun website modern, inovatif dan profesional.";
+let i=0;
+
+function typing(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(typing,40);
+}
+}
+typing();
+
+/* scroll animation */
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show")
+}
+})
+})
+
+document.querySelectorAll(".fade").forEach(el=>observer.observe(el))
+
+/* whatsapp */
+
+function sendWA(e){
+
+e.preventDefault();
+
+let name=document.getElementById("name").value;
+let email=document.getElementById("email").value;
+let message=document.getElementById("message").value;
+
+let text=`Halo Rendy saya ${name}%0AEmail: ${email}%0A%0A${message}`;
+
+let phone="62895700268700";
+
+window.open(`https://wa.me/${phone}?text=${text}`,'_blank');
+
+}
+
+</script>
+
+</body>
+</html>
